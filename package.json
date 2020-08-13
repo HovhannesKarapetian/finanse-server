@@ -19,6 +19,8 @@
     "ts-node": "^8.1.0"
   },
   "scripts": {
-    "start": "nodemon --exec ts-node ./index.ts"
+    "dev": "nodemon --exec ts-node ./index.ts",
+    "start": "tsc -p . && node ./dist/index.js",
+    "build": "tsc -p ."
   }
 }
