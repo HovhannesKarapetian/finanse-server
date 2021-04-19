@@ -1,22 +1,11 @@
 import mongoose from 'mongoose';
+import { MONGO_DB_PATH } from '../contant';
 
-/**
- * @description holds database connection provider
- */
-
-// connection uri
-const uri: string = 'mongodb+srv://dbUser:dbUser@perfin.ijbvv.mongodb.net/test?retryWrites=true&w=majority';
-
-// mongoose connection
 let conn: mongoose.Connection | null = null;
 
-/**
- * creates database connection
- * @returns mongodb connection
- */
 export const getConnection = async (): Promise<mongoose.Connection> => {
   if (conn == null) {
-    conn = await mongoose.createConnection(uri, {
+    conn = await mongoose.createConnection(MONGO_DB_PATH, {
       bufferCommands: false,
       bufferMaxEntries: 0,
       useNewUrlParser: true,

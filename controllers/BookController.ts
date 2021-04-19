@@ -3,7 +3,6 @@ import { ApolloError } from 'apollo-server';
 
 export const getAllBooks = async () => {
   let list: IBook[];
-
   try {
     list = await BookModel.find();
     if (list != null && list.length > 0) {

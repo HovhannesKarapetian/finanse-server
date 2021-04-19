@@ -1,7 +1,5 @@
 import { UserResolver } from './UserResolver';
 import { BookResolver } from './BookResolver';
-import { TransactionResolver } from '../api/Transactions';
-import { CategoryResolver } from '../api/Category';
+import { CategoryResolver } from './CategoryResolver';
 
-
-export const resolvers = [UserResolver, BookResolver, TransactionResolver, CategoryResolver];
+export const resolvers = [UserResolver, BookResolver, CategoryResolver];
