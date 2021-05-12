@@ -6,7 +6,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/dotenv": "^8.2.0",
-    "@types/mongoose": "^5.5.34",
+    "@types/mongoose": "^5.10.5",
     "apollo-server": "^2.5.0",
     "asoiaf-api": "^1.0.1",
     "dotenv": "^8.2.0",

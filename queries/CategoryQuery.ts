@@ -1,12 +1,12 @@
 import { getCategory, getCatgorys } from '../controllers/CategoryController';
 
 export const CategotyQuery = {
-  Categorys: {
+  categorys: {
     resolve: async (parent, args, context, info) => {
       return await getCatgorys();
     },
   },
-  Category: {
+  category: {
     resolve: async (parent, args, context, info) => {
       return await getCategory(args.id);
     },

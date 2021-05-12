@@ -25,8 +25,8 @@ export const CategorySchema = gql`
   }
 
   extend type Query {
-    Categorys: [Category]
-    Category(id: String!): Category
+    categorys: [Category]
+    category(id: String!): Category
   }
 
   extend type Mutation {

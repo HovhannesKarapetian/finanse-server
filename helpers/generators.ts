@@ -1,5 +1,5 @@
 import { ApolloError } from 'apollo-server';
-import mongoose, { CreateQuery, Document } from 'mongoose';
+import mongoose, { CreateQuery, Document, UpdateQuery } from 'mongoose';
 
 type TransformFunction<T> = () => T;
 
@@ -59,10 +59,29 @@ function getAllElements<T>(model: mongoose.Model<ModelType<T>, {}>) {
   };
 }
 
+function updateElement<T>(model: mongoose.Model<ModelType<T>, {}>) {
+  return async (id: string, args: mongoose.UpdateQuery<ModelType<T>>) => {
+    // let element
+
+    try {
+      let element = await model.findByIdAndUpdate(id, { ...args });
+
+      if (element != null) {
+        element.transform();
+        return element;
+      }
+    } catch (error) {
+      console.error('> updateBook error: ', error);
+      throw new ApolloError('Error updating book with id: ' + id);
+    }
+  };
+}
+
 const controllerGenerator = {
   getElement,
   createElement,
   getAllElements,
+  updateElement,
 };
 
 export { controllerGenerator };
