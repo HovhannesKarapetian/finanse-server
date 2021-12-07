@@ -1,5 +1,5 @@
-import { ApolloError } from 'apollo-server';
-import mongoose, { CreateQuery, Document, UpdateQuery } from 'mongoose';
+import { ApolloError } from "apollo-server";
+import mongoose, { Document } from "mongoose";
 
 type TransformFunction<T> = () => T;
 
@@ -21,21 +21,21 @@ function getElement<T>(model: mongoose.Model<ModelType<T>, {}>) {
         return element;
       }
     } catch (error) {
-      console.error('> getBook error: ', error);
-      throw new ApolloError('Error retrieving category with id: ' + id);
+      console.error("> getBook error: ", error);
+      throw new ApolloError("Error retrieving category with id: " + id);
     }
   };
 }
 
 function createElement<T>(model: mongoose.Model<ModelType<T>, {}>) {
-  return async (args: CreateQuery<T>) => {
+  return async (args: T) => {
     let createdBook: T;
 
     try {
       createdBook = await model.create(args);
     } catch (error) {
-      console.error('> createBook error: ', error);
-      throw new ApolloError('Error saving');
+      console.error("> createBook error: ", error);
+      throw new ApolloError("Error saving");
     }
     return createdBook;
   };
@@ -53,8 +53,8 @@ function getAllElements<T>(model: mongoose.Model<ModelType<T>, {}>) {
         return list;
       }
     } catch (error) {
-      console.error('> getAllBooks error: ', error);
-      throw new ApolloError('Error retrieving all books');
+      console.error("> getAllBooks error: ", error);
+      throw new ApolloError("Error retrieving all books");
     }
   };
 }
@@ -71,8 +71,8 @@ function updateElement<T>(model: mongoose.Model<ModelType<T>, {}>) {
         return element;
       }
     } catch (error) {
-      console.error('> updateBook error: ', error);
-      throw new ApolloError('Error updating book with id: ' + id);
+      console.error("> updateBook error: ", error);
+      throw new ApolloError("Error updating book with id: " + id);
     }
   };
 }

@@ -1,4 +1,4 @@
-import mongoose, { model } from 'mongoose';
+import mongoose, { model } from "mongoose";
 
 /**
  * @description holds book model
@@ -23,7 +23,7 @@ const schema: mongoose.SchemaDefinition = {
 };
 
 // book collection name
-const collectionName: string = 'book';
+const collectionName: string = "book";
 
 const bookSchema: mongoose.Schema = new mongoose.Schema(schema);
 
@@ -41,6 +41,6 @@ bookSchema.methods.transform = function () {
   return obj;
 };
 
-const BookModel: mongoose.Model<IBook> = model(collectionName, bookSchema);
+const BookModel = model<IBook>(collectionName, bookSchema);
 
 export default BookModel;

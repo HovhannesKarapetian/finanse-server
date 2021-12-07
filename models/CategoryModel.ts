@@ -1,4 +1,4 @@
-import mongoose, { model } from 'mongoose';
+import mongoose, { model } from "mongoose";
 
 interface ICategory {
   id: string;
@@ -19,7 +19,7 @@ const schema: mongoose.SchemaDefinition = {
   isIncome: { type: mongoose.SchemaTypes.Boolean, required: true },
 };
 
-const collectionName: string = 'category';
+const collectionName: string = "category";
 
 const categorySchema: mongoose.Schema = new mongoose.Schema(schema);
 
@@ -31,4 +31,7 @@ categorySchema.methods.transform = function () {
   return obj;
 };
 
-export const CategoryModel: mongoose.Model<ICategoryModel> = model(collectionName, categorySchema);
+export const CategoryModel = model<ICategoryModel>(
+  collectionName,
+  categorySchema
+);

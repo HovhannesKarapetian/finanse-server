@@ -1,4 +1,4 @@
-import mongoose, { Date, model } from 'mongoose';
+import mongoose, { Date, model } from "mongoose";
 
 export interface ITransactions extends mongoose.Document {
   id: string;
@@ -20,7 +20,7 @@ const schema: mongoose.SchemaDefinition = {
   date: { type: mongoose.SchemaTypes.Date, required: true },
 };
 
-const collectionName: string = 'transactions';
+const collectionName: string = "transactions";
 
 const transactionsSchema: mongoose.Schema = new mongoose.Schema(schema);
 
@@ -32,4 +32,7 @@ transactionsSchema.methods.transform = function () {
   return obj;
 };
 
-export const TransactionsModel: mongoose.Model<ITransactions> = model(collectionName, transactionsSchema);
+export const TransactionsModel = model<ITransactions>(
+  collectionName,
+  transactionsSchema
+);
