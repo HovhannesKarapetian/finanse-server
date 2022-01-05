@@ -27,7 +27,7 @@ export const getAllCategory = async () => {
     }
   } catch (error) {
     console.error('> getAllTransaction error: ', error);
-    throw new ApolloError('Error retrieving all categorys');
+    throw new ApolloError('Error retrieving all categories');
   }
   return list;
 };

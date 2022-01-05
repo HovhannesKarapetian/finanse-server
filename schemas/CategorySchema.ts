@@ -1,6 +1,6 @@
 import { gql } from 'apollo-server';
 
-export const CategorySchema = gql`
+export const categorieschema = gql`
   type Category {
     id: ID!
     name: String!
@@ -25,7 +25,7 @@ export const CategorySchema = gql`
   }
 
   extend type Query {
-    categorys: [Category]
+    categories: [Category]
     category(id: String!): Category
   }
 

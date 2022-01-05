@@ -10,7 +10,7 @@ export interface ICreateCategoryInput {
   isExpence: boolean;
 }
 
-export const CategorySchema = gql`
+export const categorieschema = gql`
   type Color {
     HUE: String!
     SHADE: String!
@@ -39,7 +39,7 @@ export const CategorySchema = gql`
     isExpence: Boolean!
   }
   extend type Query {
-    categorys: [Category]
+    categories: [Category]
     category(id: String!): Category
   }
   extend type Mutation {

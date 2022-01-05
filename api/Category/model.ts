@@ -32,7 +32,7 @@ const colorSchema = new Schema<IColor>({
   },
 });
 
-const categorySchema = new Schema<ICategory>({
+const categorieschema = new Schema<ICategory>({
   name: {
     type: SchemaTypes.String,
     required: true,
@@ -58,7 +58,7 @@ const categorySchema = new Schema<ICategory>({
   },
 });
 
-categorySchema.methods.transform = function () {
+categorieschema.methods.transform = function () {
   var obj = this.toObject();
   var id = obj._id;
   delete obj._id;
@@ -66,4 +66,4 @@ categorySchema.methods.transform = function () {
   return obj;
 };
 
-export const CategoryModel: Model<ICategory> = model('Category', categorySchema);
+export const CategoryModel: Model<ICategory> = model('Category', categorieschema);

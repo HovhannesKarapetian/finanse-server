@@ -4,7 +4,7 @@ export const CategoryQuery = {
   category: {
     resolve: async (parent, args, context, info) => await getCategory(args.id),
   },
-  categorys: {
+  categories: {
     resolve: async () => await getAllCategory(),
   },
 };

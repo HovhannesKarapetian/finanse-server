@@ -5,6 +5,7 @@ interface ICategory {
   name: string;
   icon: string;
   color: string;
+  parrentId?: string;
 }
 
 type ICategoryDocument = ICategory & mongoose.Document;
@@ -17,13 +18,14 @@ const schema: mongoose.SchemaDefinition = {
   icon: { type: mongoose.SchemaTypes.String, required: true },
   color: { type: mongoose.SchemaTypes.String, required: true },
   isIncome: { type: mongoose.SchemaTypes.Boolean, required: true },
+  parrentId: { type: mongoose.SchemaTypes.String, required: false },
 };
 
 const collectionName: string = "category";
 
-const categorySchema: mongoose.Schema = new mongoose.Schema(schema);
+const categorieschema: mongoose.Schema = new mongoose.Schema(schema);
 
-categorySchema.methods.transform = function () {
+categorieschema.methods.transform = function () {
   var obj = this.toObject();
   var id = obj._id;
   delete obj._id;
@@ -33,5 +35,5 @@ categorySchema.methods.transform = function () {
 
 export const CategoryModel = model<ICategoryModel>(
   collectionName,
-  categorySchema
+  categorieschema
 );
