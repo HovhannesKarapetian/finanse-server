@@ -1,12 +1,13 @@
 import { gql } from "apollo-server";
 
-export const categoryschema = gql`
+export const CategorySchema = gql`
   type Category {
     id: ID!
     name: String!
     icon: String!
     color: String!
     isIncome: Boolean!
+    parrentId: ID
   }
 
   input CreateCategoryInput {
@@ -14,6 +15,7 @@ export const categoryschema = gql`
     icon: String!
     color: String!
     isIncome: Boolean!
+    parrentId: ID
   }
 
   input UpdateCategoryInput {
@@ -22,6 +24,7 @@ export const categoryschema = gql`
     icon: String!
     color: String!
     isIncome: Boolean!
+    parrentId: ID
   }
 
   extend type Query {
