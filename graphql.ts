@@ -12,9 +12,9 @@ const apolloServer = new ApolloServer({
   resolvers,
   context: context,
   playground: {
-    endpoint: "/graphql"
+    endpoint: "/graphql",
   },
-  introspection: true
+  introspection: true,
 });
 
 export default apolloServer;

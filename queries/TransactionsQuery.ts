@@ -1,8 +1,8 @@
-import { getTransaction, getTransactions } from '../controllers';
+import { getTransaction, getTransactions } from "../controllers";
 
 export const TransactionsQuery = {
   transactions: {
-    resolve: async () => {
+    resolve: async (parent, args, context, info) => {
       return await getTransactions();
     },
   },

@@ -1,6 +1,6 @@
 import mongoose, { model } from "mongoose";
 
-interface ICategory {
+export interface ICategory {
   id: string;
   name: string;
   icon: string;

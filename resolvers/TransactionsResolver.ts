@@ -1,14 +1,12 @@
-import { getCategory } from '../controllers';
-import { IResolvers } from 'apollo-server';
-import { TransactionsQuery } from '../queries';
-import { TransactionsMutation } from '../mutations';
+import { IResolvers } from "apollo-server";
+import { TransactionsQuery } from "../queries";
+import { TransactionsMutation } from "../mutations";
+import { categoryLoader } from "../loaders";
 
 export const TransactionsResolver: IResolvers = {
   Query: TransactionsQuery,
   Mutation: TransactionsMutation,
   Transactions: {
-    category(parent) {
-      return getCategory(parent.categoryId);
-    },
+    category: ({ categoryId }) => categoryLoader.load(categoryId),
   },
 };

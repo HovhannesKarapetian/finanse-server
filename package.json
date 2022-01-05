@@ -9,10 +9,11 @@
     "@types/mongoose": "^5.10.5",
     "apollo-server": "^2.5.0",
     "asoiaf-api": "^1.0.1",
+    "dataloader": "^2.0.0",
     "dotenv": "^8.2.0",
     "graphql": "^14.3.0",
-    "typescript": "^3.4.5",
-    "mongoose": "^5.12.11"
+    "mongoose": "^5.12.11",
+    "typescript": "^3.4.5"
   },
   "devDependencies": {
     "nodemon": "^1.19.0",

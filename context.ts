@@ -6,5 +6,8 @@ import { getConnection } from "./database/Provider";
 
 export const context = async () => {
   const dbConn = await getConnection();
-  return { dbConn };
-}
+  return {
+    dbConn,
+    dataloaders: new WeakMap(),
+  };
+};
