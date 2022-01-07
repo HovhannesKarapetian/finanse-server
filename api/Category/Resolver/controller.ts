@@ -34,13 +34,11 @@ export const getAllCategory = async () => {
 
 export const createCategory = async (args) => {
   let createdCategory;
-  console.log(args);
   let newCategory = {
     ...args,
   };
   try {
     createdCategory = await CategoryModel.create(newCategory);
-    console.log(createdCategory);
   } catch (error) {
     console.error('> createBook error: ', error);
     throw new ApolloError('Error saving book with name: ' + args.name);

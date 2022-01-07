@@ -8,7 +8,7 @@ export const TransactionResolver: IResolvers = {
   Mutation: TransactionMutation,
   Transaction: {
     category: async (parrent) => {
-      console.log(parrent);
+     
       return await getCategory(parrent.category);
     },
   },

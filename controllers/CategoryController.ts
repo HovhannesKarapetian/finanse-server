@@ -8,8 +8,6 @@ export const getCategory = controllerGenerator.getElement(CategoryModel);
 export const createCategory = controllerGenerator.createElement(CategoryModel);
 
 export const getCatgorys = async (...args) => {
-  console.log(args);
-  console.warn("args    sdfsdfsdf");
   let list;
 
   try {
