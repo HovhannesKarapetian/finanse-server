@@ -50,7 +50,7 @@ async function green() {
   apolloServer.applyMiddleware({ app });
 }
 green();
-
+ 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}/graphql`);
   mongoose.connect(MONGO_DB_PATH);
