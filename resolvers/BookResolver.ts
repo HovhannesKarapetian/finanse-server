@@ -1,10 +1,7 @@
 import { BookQuery } from "../queries/BookQuery";
 import { BookMutation } from "../mutations/BookMutation";
-import { IResolvers } from "apollo-server";
 
-
-
-export const BookResolver: IResolvers = {
+export const BookResolver: any = {
   Query: BookQuery,
-  Mutation: BookMutation
-}
+  Mutation: BookMutation,
+};

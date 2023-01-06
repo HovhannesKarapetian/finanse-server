@@ -1,4 +1,4 @@
-import mongoose, { model } from "mongoose";
+import mongoose, { model, SchemaTypes } from "mongoose";
 
 /**
  * @description holds book model
@@ -18,8 +18,8 @@ export interface IBook extends mongoose.Document {
  * book schema
  */
 const schema: mongoose.SchemaDefinition = {
-  name: { type: mongoose.SchemaTypes.String, required: true, unique: true },
-  description: { type: mongoose.SchemaTypes.String, required: true },
+  name: { type: SchemaTypes.String, required: true, unique: true },
+  description: { type: SchemaTypes.String, required: true },
 };
 
 // book collection name

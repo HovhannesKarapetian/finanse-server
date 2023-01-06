@@ -1,19 +1,21 @@
-import { ApolloServer } from "apollo-server";
+// import { ApolloServer } from "apollo-server";
 import { resolvers } from "./resolvers";
 import { schema } from "./schemas";
 import { context } from "./context";
-
+import { ApolloServer } from "apollo-server-express";
+import { makeExecutableSchema } from "graphql-tools";
 /**
  * @description holds and creates apollo server
  */
 
-const apolloServer = new ApolloServer({
+export const schemat = makeExecutableSchema({
   typeDefs: schema,
-  resolvers,
+  resolvers: resolvers,
+});
+
+const apolloServer = new ApolloServer({
+  schema: schemat,
   context: context,
-  playground: {
-    endpoint: "/graphql",
-  },
   introspection: true,
 });
 

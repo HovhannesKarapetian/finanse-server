@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/schemas/**/*.graphql"]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.js"
+    }
+  ],
+  "env": {
+    "MONGO_URI": "@mongo_url",
+    "DB_NAME": "@db_name",
+    "MONGO_DB_PATH": "@mongo_db_path"
+  }
+}
